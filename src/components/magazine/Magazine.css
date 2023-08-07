@@ -1,0 +1,40 @@
+.magazine {
+    padding: 2rem 2rem;
+    width: 70%;
+    margin: auto;
+}
+
+.magazine .grille {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    justify-content: space-between;
+}
+
+.magazine .grille .card {
+    height: 380px;
+    border: 0;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.magazine .grille .card img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.magazine .contentNom {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.magazine .grille .card:hover{
+    opacity: .6;
+}
