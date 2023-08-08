@@ -1,0 +1,80 @@
+.modalReadDoc.modal {
+    display: flex !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.modalReadDoc.modal .modal-dialog {
+    max-width: 70% !important;
+    width: 100% !important;
+}
+
+.modalReadDoc.modal .modal-content {
+    border-radius: 3px !important;
+    padding: 1rem;
+}
+
+.modalReadDoc.modal .modal-header {
+    background-color: #fff !important;
+    border: 0 !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.readDoc {
+    display: flex;
+    gap: 3rem;
+}
+
+.readDoc .cardShowDoc {
+    width: 70%;
+    height: 500px;
+    background-color: #eee;
+    border-radius: 3px;
+}
+
+.readDoc .descNom {
+    width: 27%;
+    border: 2px solid blueviolet;
+}
+
+.modalReadDoc.modal .closeMdalBtn {
+    background: #fff;
+    border: 0;
+}
+
+.modalReadDoc.modal .closeMdalBtn svg {
+    font-size: 2.2rem;
+    color: #666;
+}
+
+.readDoc .cardShowDoc canvas {
+    height: 100% !important;
+    object-fit: scale-down;
+}
+
+.readDoc .cardShowDoc ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.readDoc .cardShowDoc  ul li {
+ border: 2px solid red;
+ position: absolute;
+ top:50%;
+
+}
+
+.readDoc .cardShowDoc ul li svg {
+    font-size: 2.4rem;
+    color: #777;
+    
+}

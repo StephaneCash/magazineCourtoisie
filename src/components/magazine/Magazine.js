@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react'
 import "./Magazine.css"
 import { useSelector } from 'react-redux'
 import { baseUrlImage } from '../../bases/basesUrl';
+import ReadDoc from './ReadDoc';
 
 const Magazine = ({ categorieId, valueSearch }) => {
 
     const magazines = useSelector(state => state.magazines.value);
     const [magazinesFilter, setMagazineFilter] = useState([]);
+
+    const [showModalReadDoc, setShowModalReadDoc] = useState(false);
+    const [magazine, setMagazine] = useState();
 
     useEffect(() => {
         const filterMagazines = magazines && magazines.length > 0 && magazines
@@ -33,18 +37,26 @@ const Magazine = ({ categorieId, valueSearch }) => {
         setMagazineFilter(filterMagazines);
     }, [categorieId, magazines]);
 
+    function handleMagazine(val) {
+        setShowModalReadDoc(true);
+        setMagazine(val);
+    };
+
+    function closeModalReadDoc() {
+        setShowModalReadDoc(false);
+    };
 
     return (
         <div className='magazine'>
             <div className='grille'>
                 {
-                    magazinesFilter && magazinesFilter.length > 0 && magazinesFilter
+                    magazinesFilter ? magazinesFilter.length > 0 && magazinesFilter
                         .map(value => {
-                            return <div className='card' key={value.id}>
+                            return <div className='card' key={value.id} onClick={() => handleMagazine(value)}>
                                 <img src={baseUrlImage + "/" + value.image} alt="" />
                                 <div className='contentNom'>{value.nom}</div>
                             </div>
-                        }) 
+                        }) : "Problème de connexion au serveur."
                 }
             </div>
 
@@ -52,6 +64,11 @@ const Magazine = ({ categorieId, valueSearch }) => {
                 magazinesFilter && magazinesFilter.length === 0 &&
                 <div>0 magazines trouvés</div>
             }
+            <ReadDoc
+                show={showModalReadDoc}
+                closeModal={closeModalReadDoc}
+                magazine={magazine}
+            />
         </div>
     )
 }
