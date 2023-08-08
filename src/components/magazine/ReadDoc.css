@@ -117,3 +117,16 @@
     font-size: 1.5rem;
     color: #fff;
 }
+
+.detailTabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.detailTabs h5 {
+    font-size: 1rem;
+}
+
+.modalReadDoc.modal .detail {
+    margin-top: 2rem;
+}

@@ -76,9 +76,11 @@ const ReadDoc = (props) => {
                         <FiGrid />
                     </button>
                     <button>
-                        <FiDownload />
+                        <a href={baseUrlImage + "/" + file}>
+                            <FiDownload />
+                        </a>
                     </button>
-                    <button onClick={()=>{
+                    <button onClick={() => {
                         screen.enter()
                     }}>
                         <FaExpand />
