@@ -125,6 +125,12 @@
 
 .detailTabs h5 {
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.detailTabs .selected {
+    border-bottom: 2px solid #084298;
+    padding-bottom: .5rem;
 }
 
 .modalReadDoc.modal .detail {

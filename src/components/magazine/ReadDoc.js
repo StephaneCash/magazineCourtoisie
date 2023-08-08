@@ -15,6 +15,8 @@ const ReadDoc = (props) => {
     const file = magazine && magazine.urlDOc;
     const [page, setPage] = useState(1);
 
+    const [tab, setTab] = useState(1);
+
     const screen = useFullScreenHandle();
 
     useEffect(() => {
@@ -91,8 +93,8 @@ const ReadDoc = (props) => {
                 </div>
                 <div className='detail'>
                     <div className='detailTabs'>
-                        <h5>Détails</h5>
-                        <h5>Présentation de {magazine && magazine.nom}</h5>
+                        <h5 onClick={()=>setTab(1)} className={tab === 1 ? "selected" : ""}>Détails</h5>
+                        <h5 onClick={()=>setTab(2)} className={tab === 2 ? "selected" : ""}>Présentation de {magazine && magazine.nom}</h5>
                     </div>
                 </div>
             </Modal.Body>

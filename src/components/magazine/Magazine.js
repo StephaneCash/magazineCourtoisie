@@ -56,7 +56,7 @@ const Magazine = ({ categorieId, valueSearch }) => {
                                 <img src={baseUrlImage + "/" + value.image} alt="" />
                                 <div className='contentNom'>{value.nom}</div>
                             </div>
-                        }) : "Problème de connexion au serveur."
+                        }) : "Chargement..."
                 }
             </div>
 
