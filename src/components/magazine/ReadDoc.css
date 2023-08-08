@@ -38,7 +38,6 @@
 
 .readDoc .descNom {
     width: 27%;
-    border: 2px solid blueviolet;
 }
 
 .modalReadDoc.modal .closeMdalBtn {
@@ -56,25 +55,27 @@
     object-fit: scale-down;
 }
 
-.readDoc .cardShowDoc ul {
-    list-style: none;
-    height: 100%;
+.readDoc .cardShowDoc .btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding: 0;
-    margin: 0;
 }
 
-.readDoc .cardShowDoc  ul li {
- border: 2px solid red;
- position: absolute;
- top:50%;
-
+.readDoc .cardShowDoc .btns button {
+    position: absolute;
+    top: 50%;
+    border: 0;
 }
 
-.readDoc .cardShowDoc ul li svg {
+.readDoc .cardShowDoc .btns button:first-child {
+    left: 0;
+}
+
+.readDoc .cardShowDoc .btns svg {
     font-size: 2.4rem;
     color: #777;
-    
+}
+
+.readDoc .nbrePages{
+    position: absolute;
 }

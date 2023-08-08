@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Modal } from "react-bootstrap";
 import "./ReadDoc.css"
 import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
@@ -11,10 +11,12 @@ const ReadDoc = (props) => {
     let magazine = props.magazine;
 
     const file = magazine && magazine.urlDOc;
-
-    console.log(file, " FILE ")
     const [page, setPage] = useState(1);
 
+    useEffect(()=>{
+        let nombrePages = document.getElementById("nbrePages");
+        console.log(nombrePages , " NOMBRE PAGES")
+    }, [page]);
 
     return (
         <Modal show={show} className='modalReadDoc'>
@@ -33,24 +35,23 @@ const ReadDoc = (props) => {
                                     {!pdfDocument && <span>Chargement...</span>}
                                     {canvas}
                                     {Boolean(pdfDocument && pdfDocument.numPages) && (
-                                        <ul className="pager">
-                                            <li className="previous">
+                                        <>
+                                            <div id='nbrePages' className='nbrePages'>{page} sur {pdfDocument && pdfDocument.numPages}</div>
+                                            <div className='btns'>
                                                 <button
                                                     disabled={page === 1}
                                                     onClick={() => setPage(page - 1)}
                                                 >
                                                     <FiChevronLeft />
                                                 </button>
-                                            </li>
-                                            <li className="next">
                                                 <button
                                                     disabled={page === pdfDocument.numPages}
                                                     onClick={() => setPage(page + 1)}
                                                 >
                                                     <FiChevronRight />
                                                 </button>
-                                            </li>
-                                        </ul>
+                                            </div>
+                                        </>
                                     )}
                                 </>
                             )}
