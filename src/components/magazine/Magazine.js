@@ -38,13 +38,13 @@ const Magazine = ({ categorieId, valueSearch }) => {
         <div className='magazine'>
             <div className='grille'>
                 {
-                    magazinesFilter && magazinesFilter.length > 0 ? magazinesFilter
+                    magazinesFilter && magazinesFilter.length > 0 && magazinesFilter
                         .map(value => {
                             return <div className='card' key={value.id}>
                                 <img src={baseUrlImage + "/" + value.image} alt="" />
                                 <div className='contentNom'>{value.nom}</div>
                             </div>
-                        }) : "Chargement..."
+                        }) 
                 }
             </div>
 
