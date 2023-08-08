@@ -4,6 +4,7 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    margin-top: 3rem;
 }
 
 .modalReadDoc.modal .modal-dialog {
@@ -27,17 +28,26 @@
 .readDoc {
     display: flex;
     gap: 3rem;
+    width: 100%;
 }
 
 .readDoc .cardShowDoc {
     width: 70%;
+    border: 0;
+    border-radius: 0;
+}
+
+.readDoc .cardShowDoc .fullscreen {
+    width: 100%;
     height: 500px;
+}
+
+.readDoc .card {
     background-color: #eee;
-    border-radius: 3px;
 }
 
 .readDoc .descNom {
-    width: 27%;
+    flex: 1;
 }
 
 .modalReadDoc.modal .closeMdalBtn {
@@ -50,9 +60,12 @@
     color: #666;
 }
 
-.readDoc .cardShowDoc canvas {
+.readDoc .cardShowDoc .fullscreen canvas {
     height: 100% !important;
     object-fit: scale-down;
+    border-radius: 0 !important;
+    border: 0 !important;
+    width: 100% !important;
 }
 
 .readDoc .cardShowDoc .btns {
@@ -76,6 +89,31 @@
     color: #777;
 }
 
-.readDoc .nbrePages{
+.readDoc .fullscreen .nbrePages {
     position: absolute;
+    top: 0;
+    background-color: #ddd;
+}
+
+.modalReadDoc.modal .toolsBar {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    background-color: #333;
+}
+
+.modalReadDoc.modal .toolsBar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: #333;
+}
+
+.modalReadDoc.modal .toolsBar button svg {
+    font-size: 1.5rem;
+    color: #fff;
 }

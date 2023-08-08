@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Modal } from "react-bootstrap";
 import "./ReadDoc.css"
-import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiDownload, FiGrid, FiX } from 'react-icons/fi';
 import { baseUrlImage } from '../../bases/basesUrl';
 import Pdf from "@mikecousins/react-pdf";
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import { FaExpand, FaRegShareSquare } from 'react-icons/fa';
 
 const ReadDoc = (props) => {
 
@@ -13,9 +15,11 @@ const ReadDoc = (props) => {
     const file = magazine && magazine.urlDOc;
     const [page, setPage] = useState(1);
 
-    useEffect(()=>{
+    const screen = useFullScreenHandle();
+
+    useEffect(() => {
         let nombrePages = document.getElementById("nbrePages");
-        console.log(nombrePages , " NOMBRE PAGES")
+        console.log(nombrePages, " NOMBRE PAGES")
     }, [page]);
 
     return (
@@ -27,38 +31,39 @@ const ReadDoc = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <div className='readDoc'>
-                    <div className='cardShowDoc card page'>
-
-                        <Pdf file={baseUrlImage + "/" + file} page={page}>
-                            {({ pdfDocument, pdfPage, canvas }) => (
-                                <>
-                                    {!pdfDocument && <span>Chargement...</span>}
-                                    {canvas}
-                                    {Boolean(pdfDocument && pdfDocument.numPages) && (
-                                        <>
-                                            <div id='nbrePages' className='nbrePages'>{page} sur {pdfDocument && pdfDocument.numPages}</div>
-                                            <div className='btns'>
-                                                <button
-                                                    disabled={page === 1}
-                                                    onClick={() => setPage(page - 1)}
-                                                >
-                                                    <FiChevronLeft />
-                                                </button>
-                                                <button
-                                                    disabled={page === pdfDocument.numPages}
-                                                    onClick={() => setPage(page + 1)}
-                                                >
-                                                    <FiChevronRight />
-                                                </button>
-                                            </div>
-                                        </>
-                                    )}
-                                </>
-                            )}
-                        </Pdf>
+                    <div className='cardShowDoc card'>
+                        <FullScreen handle={screen}>
+                            <Pdf file={baseUrlImage + "/" + file} page={page}>
+                                {({ pdfDocument, pdfPage, canvas }) => (
+                                    <>
+                                        {!pdfDocument && <span>Chargement...</span>}
+                                        {canvas}
+                                        {Boolean(pdfDocument && pdfDocument.numPages) && (
+                                            <>
+                                                <div id='nbrePages' className='nbrePages'>{page} sur {pdfDocument && pdfDocument.numPages}</div>
+                                                <div className='btns'>
+                                                    <button
+                                                        disabled={page === 1}
+                                                        onClick={() => setPage(page - 1)}
+                                                    >
+                                                        <FiChevronLeft />
+                                                    </button>
+                                                    <button
+                                                        disabled={page === pdfDocument.numPages}
+                                                        onClick={() => setPage(page + 1)}
+                                                    >
+                                                        <FiChevronRight />
+                                                    </button>
+                                                </div>
+                                            </>
+                                        )}
+                                    </>
+                                )}
+                            </Pdf>
+                        </FullScreen>
                     </div>
-                    <div>
 
+                    <div>
                     </div>
 
                     <div className='descNom'>
@@ -66,7 +71,22 @@ const ReadDoc = (props) => {
 
                     </div>
                 </div>
-
+                <div className='toolsBar'>
+                    <button>
+                        <FiGrid />
+                    </button>
+                    <button>
+                        <FiDownload />
+                    </button>
+                    <button onClick={()=>{
+                        screen.enter()
+                    }}>
+                        <FaExpand />
+                    </button>
+                    <button>
+                        <FaRegShareSquare />
+                    </button>
+                </div>
                 <div className='detail'>
                     <div className='detailTabs'>
                         <h5>Détails</h5>
