@@ -13,18 +13,26 @@ const Magazine = ({ categorieId, valueSearch }) => {
             .filter(val => {
                 const nom = val && val.nom && val.nom.toLowerCase();
                 const value = valueSearch && valueSearch.toLowerCase();
-                const categorie = val && val.categorieMagazineId;
-                console.log(typeof categorie)
-                if (categorie === categorieId === true) {
-                    return parseInt(categorie) === parseInt(categorieId);
-                } else {
+                if (valueSearch)
                     return nom.includes(value);
-                }
+                else
+                    return val
             });
         setMagazineFilter(filterMagazines);
-    }, [valueSearch, magazines, categorieId]);
-    
-   // console.log(typeof categorieId)
+    }, [valueSearch, magazines]);
+
+    useEffect(() => {
+        const filterMagazines = magazines && magazines.length > 0 && magazines
+            .filter(val => {
+                const categorieMagazineId = val && val.categorieMagazineId;
+                if (categorieId)
+                    return categorieMagazineId === categorieId;
+                else
+                    return val
+            });
+        setMagazineFilter(filterMagazines);
+    }, [categorieId, magazines]);
+
 
     return (
         <div className='magazine'>
