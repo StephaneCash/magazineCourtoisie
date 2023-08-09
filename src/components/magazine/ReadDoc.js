@@ -93,9 +93,19 @@ const ReadDoc = (props) => {
                 </div>
                 <div className='detail'>
                     <div className='detailTabs'>
-                        <h5 onClick={()=>setTab(1)} className={tab === 1 ? "selected" : ""}>Détails</h5>
-                        <h5 onClick={()=>setTab(2)} className={tab === 2 ? "selected" : ""}>Présentation de {magazine && magazine.nom}</h5>
+                        <h5 onClick={() => setTab(1)} className={tab === 1 ? "selected" : ""}>Détails</h5>
+                        <h5 onClick={() => setTab(2)} className={tab === 2 ? "selected" : ""}>Présentation de {magazine && magazine.nom}</h5>
                     </div>
+
+                    {
+                        tab === 1 ?
+                            <p>
+                                {
+                                    magazine.description
+                                }
+                            </p>
+                            : tab === 2 ? "" : ""
+                    }
                 </div>
             </Modal.Body>
             <Modal.Footer>
