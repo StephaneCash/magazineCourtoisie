@@ -1,15 +1,14 @@
 .Search {
-    padding: 1rem;
+    padding: 5rem;
     width: 100%;
     background-color: #084298;
-    height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .Search .content {
-    width: 50%;
+    width: 60%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -58,4 +57,54 @@
     border-bottom-left-radius: 0;
     box-shadow: none;
     border: none;
+}
+
+@media screen and (max-width:1024px) {
+    .Search {
+        padding: 5rem;
+    }
+
+    .Search .content {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .Search {
+        padding: 5rem;
+    }
+
+    .Search .content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .Search {
+        padding: 5rem 2rem 5rem 2rem;
+    }
+
+    .Search .content {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .Search {
+        padding: 4rem 1rem 4rem 1rem;
+    }
+
+    .Search .content {
+        width: 100%;
+    }
+
+    .Search .content h5 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:370px) {
+    .Search .content h5 {
+        font-size: 1.6rem;
+    }
 }
