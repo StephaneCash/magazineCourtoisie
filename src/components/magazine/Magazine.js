@@ -54,7 +54,12 @@ const Magazine = ({ categorieId, valueSearch }) => {
                         .map(value => {
                             return <div className='card' key={value.id} onClick={() => handleMagazine(value)}>
                                 <img src={baseUrlImage + "/" + value.image} alt="" />
-                                <div className='contentNom'>{value.nom}</div>
+                                <div className='contentNom'>
+                                    {
+                                        value && value.nom && value.nom.length > 20 ? value && value.nom && value.nom.substring(0, 20) + "..." :
+                                            value && value.nom
+                                    }
+                                </div>
                             </div>
                         }) : "Chargement..."
                 }

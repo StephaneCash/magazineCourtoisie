@@ -35,6 +35,60 @@
     padding: 1rem;
 }
 
-.magazine .grille .card:hover{
+.magazine .grille .card:hover {
     opacity: .6;
+    border: 1px solid #ddd;
+}
+
+@media screen and (max-width:1335px) {
+    .magazine {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1175px) {
+    .magazine {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1015px) {
+    .magazine .grille {
+        display: grid;
+        grid-template-columns: repeat(3, 32.33333%);
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .magazine .grille {
+        display: grid;
+        grid-template-columns: repeat(2, 48.5%);
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .magazine {
+        width: 100%;
+        padding: 2rem .4rem;
+    }
+
+    .magazine .grille .card {
+        height: 280px;
+        border: 0;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: .6s;
+    }
+    
+    .magazine .grille .card img {
+        height: 70%;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
 }
