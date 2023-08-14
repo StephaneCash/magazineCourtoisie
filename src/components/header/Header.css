@@ -27,6 +27,11 @@
     vertical-align: middle;
 }
 
+.header .listSmallScreenDevice {
+    display: none;
+    transform: translateX(-100%);
+}
+
 .header .col1 ul {
     list-style: none;
     display: flex;
@@ -47,4 +52,15 @@
     color: #084298;
     background-color: #fff;
     border-radius: 5px;
+}
+
+@media screen and (max-width:900px) {
+    .header .col1 ul {
+        display: none;
+    }
+
+    .header .listSmallScreenDevice.open {
+        display: block;
+        transform: translateX(0);
+    }
 }
