@@ -101,7 +101,7 @@ const ReadDoc = (props) => {
                         tab === 1 ?
                             <p>
                                 {
-                                    magazine.description
+                                    magazine && magazine.description
                                 }
                             </p>
                             : tab === 2 ? "" : ""
