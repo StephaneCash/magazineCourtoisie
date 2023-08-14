@@ -14,7 +14,61 @@
     border: 1px solid #084298;
     color: #084298;
     margin-bottom: 1rem;
-    width: 100%;
+    width: auto;
     border-radius: 3px;
     font-weight: bold;
+}
+
+@media screen and (max-width:1335px) {
+    .Categorie {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:1175px) {
+    .Categorie {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .Categorie .grille {
+        grid-template-columns: repeat(4, 24%);
+    }
+}
+
+@media screen and (max-width:855px) {
+    .Categorie .grille {
+        grid-template-columns: repeat(3, 32.333%);
+    }
+}
+
+@media screen and (max-width:640px) {
+    .Categorie .grille {
+        grid-template-columns: repeat(2, 49%);
+    }
+}
+
+@media screen and (max-width:450px) {
+    .Categorie {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Categorie {
+        width: 100%;
+        padding: 2rem .4rem;
+    }
+
+    .Categorie .grille button {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:280px) {
+    .Categorie .grille {
+        grid-template-columns: repeat(1, 100%);
+    }
 }

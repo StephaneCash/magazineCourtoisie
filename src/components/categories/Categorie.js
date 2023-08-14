@@ -14,9 +14,14 @@ const Categorie = ({ setCategorieId }) => {
 
             <div className='grille'>
                 {
-                    categories && categories.length > 0 ? categories.map(val => {
-                        return <button key={val.id} className='btn' onClick={() => setCategorieId(val.id)}>{val.nom}</button>
-                    }) : ""
+                    categories ? categories.length > 0 ? categories.map(val => {
+                        return <button key={val.id} className='btn' onClick={() => setCategorieId(val.id)}>
+                            {
+                                val && val.nom && val.nom.length > 15 ? val && val.nom && val.nom.substring(0, 15) + "..." :
+                                    val && val.nom
+                            }
+                        </button>
+                    }) : "Chargement..." : "Connexion impossible"
                 }
                 <button className='btn' onClick={() => setCategorieId("")}>Toutes les catégories</button>
             </div>
