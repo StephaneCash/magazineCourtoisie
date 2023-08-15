@@ -14,6 +14,7 @@ const ReadDoc = (props) => {
 
     const file = magazine && magazine.urlDOc;
     const [page, setPage] = useState(1);
+    const [nbrPages, setNbrPages] = useState(0);
 
     const [tab, setTab] = useState(1);
 
@@ -21,8 +22,9 @@ const ReadDoc = (props) => {
 
     useEffect(() => {
         let nombrePages = document.getElementById("nbrePages");
-        console.log(nombrePages, " NOMBRE PAGES")
-    }, [page]);
+        setNbrPages(nombrePages && nombrePages.innerHTML && nombrePages.innerHTML.split(" sur")
+            && nombrePages.innerHTML.split(" sur")[1]);
+    }, [page, magazine]);
 
     return (
         <Modal show={show} className='modalReadDoc'>
@@ -33,6 +35,8 @@ const ReadDoc = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <div className='readDoc'>
+                    <h5>{magazine && magazine.nom}</h5>
+                    <span>{nbrPages && nbrPages}</span>
                     <div className='cardShowDoc card'>
                         <FullScreen handle={screen}>
                             <Pdf file={baseUrlImage + "/" + file} page={page}>
@@ -63,14 +67,6 @@ const ReadDoc = (props) => {
                                 )}
                             </Pdf>
                         </FullScreen>
-                    </div>
-
-                    <div>
-                    </div>
-
-                    <div className='descNom'>
-                        <h5>{magazine && magazine.nom}</h5>
-
                     </div>
                 </div>
                 <div className='toolsBar'>

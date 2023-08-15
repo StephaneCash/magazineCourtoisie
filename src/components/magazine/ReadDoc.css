@@ -28,12 +28,13 @@
 
 .readDoc {
     display: flex;
-    gap: 3rem;
+    flex-direction: column;
+    gap: 1rem;
     width: 100%;
 }
 
 .readDoc .cardShowDoc {
-    width: 70%;
+    width: 100%;
     border: 0;
     border-radius: 0;
 }
@@ -136,4 +137,14 @@
 
 .modalReadDoc.modal .detail {
     margin-top: 2rem;
+}
+
+@media screen and (max-width:1200px) {
+    .modalReadDoc.modal .modal-dialog {
+        max-width: 90% !important;
+    }
+}
+
+@media screen and (max-width:900px) {
+
 }
