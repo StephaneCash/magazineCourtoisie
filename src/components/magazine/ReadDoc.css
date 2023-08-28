@@ -53,8 +53,10 @@
 }
 
 .modalReadDoc.modal .closeMdalBtn {
-    background: #fff;
+    background: transparent;
     border: 0;
+    position: fixed;
+    z-index: 1;
 }
 
 .modalReadDoc.modal .closeMdalBtn svg {
@@ -103,7 +105,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     background-color: #333;
 }
 
@@ -145,6 +147,16 @@
     }
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:700px) {
+    .modalReadDoc.modal .toolsBar {
+        width: 100%;
+    }
 
+    .modalReadDoc.modal .modal-dialog {
+        max-width: 95% !important;
+    }
+
+    .detailTabs h5{
+        font-size: 13px;
+    }
 }
