@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Modal } from "react-bootstrap";
 import "./ReadDoc.css"
-import { FiChevronLeft, FiChevronRight, FiDownload, FiGrid, FiX } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiGrid, FiX } from 'react-icons/fi';
 import { baseUrlImage } from '../../bases/basesUrl';
 import Pdf from "@mikecousins/react-pdf";
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
@@ -72,11 +72,6 @@ const ReadDoc = (props) => {
                 <div className='toolsBar'>
                     <button>
                         <FiGrid />
-                    </button>
-                    <button>
-                        <a href={baseUrlImage + "/" + file}>
-                            <FiDownload />
-                        </a>
                     </button>
                     <button onClick={() => {
                         screen.enter()

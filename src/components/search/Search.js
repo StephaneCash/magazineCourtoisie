@@ -11,9 +11,9 @@ const Search = ({ setValueSearch }) => {
     return (
         <div className='Search'>
             <div className='content'>
-                <h5>Modèles de magazines</h5>
-                <p>Vous pouvez choisir parmi une grande variété de modèles de magazines gratuits pour étonner et intriguer votre public. Commencez à zéro si vous voulez et
-                    donnez à votre magazine numérique cette touche personnelle que vos lecteurs aiment tant.</p>
+                <h5>Savoir-vivre</h5>
+                <p>Les bonnes manières servent plus que les beaux habits <br/> pour nous faire estimer par autrui.</p>
+                <p>Solange KABENGELE KAZADI </p>
                 <form className='inputSearch' onSubmit={(e) => handleSubmit(e)}>
                     <div className='svg'>
                         <FaSearch />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Header.css"
 import logo from "../../assets/logo.png"
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -19,12 +20,20 @@ const Header = () => {
         })
     }, []);
 
+    const navigate = useNavigate();
+
+    function handleToHome() {
+        navigate("/");
+    };
+
     return (
         <nav className='header'>
             <div className='col1'>
-                <img src={logo} alt="" />
+                <img src={logo} alt="" onClick={handleToHome} style={{cursor:"pointer"}} />
                 <ul>
-                    <li>Pourquoi Magazine Espoir ?</li>
+                    <li>
+                        <Link to="/pourquoi-magazine-courtoisie" style={{ color: "#333", textDecoration: "none" }}>Pourquoi Magazine Courtoisie ?</Link>
+                    </li>
                     <li>Créer</li>
                     <li>Ressources</li>
                     <li>Exemples</li>
