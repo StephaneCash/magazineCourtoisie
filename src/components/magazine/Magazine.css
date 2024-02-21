@@ -26,18 +26,29 @@
     object-fit: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    transition: all 0.3s;
 }
 
 .magazine .contentNom {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    font-weight: bold;
 }
 
-.magazine .grille .card:hover {
-    opacity: .6;
-    border: 1px solid #ddd;
+.magazine .grille .card img:hover {
+    transform: scale(1.019);
+}
+
+.descMagazine {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.descMagazine .categorieNom {
+    color: #084298;
+    font-weight: 10px !important;
 }
 
 @media screen and (max-width:1335px) {
@@ -83,7 +94,7 @@
         cursor: pointer;
         transition: .6s;
     }
-    
+
     .magazine .grille .card img {
         height: 70%;
         width: 100%;

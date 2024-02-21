@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Search.css"
 import { FaSearch } from 'react-icons/fa'
 
-const Search = ({ setValueSearch }) => {
+const Search = ({ setValueSearch, setCategorieId, valueSearch }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
     };
+
+    useEffect(()=>{
+        setCategorieId("");
+    }, [valueSearch, setCategorieId]);
 
     return (
         <div className='Search'>

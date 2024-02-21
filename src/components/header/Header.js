@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "./Header.css"
 import logo from "../../assets/logo.png"
 import { Link, useNavigate } from 'react-router-dom';
@@ -40,8 +40,8 @@ const Header = () => {
 
                     <li className='liSpecifique'>
                         <select>
-                            <option value="" key="">Fr</option>
-                            <option value="" key="">En</option>
+                            <option value="">Fr</option>
+                            <option value="">En</option>
                         </select>
 
                         <button>Nous contacter</button>
@@ -50,8 +50,8 @@ const Header = () => {
             </div>
             <div className='col2'>
                 <select>
-                    <option value="" key="">Fr</option>
-                    <option value="" key="">En</option>
+                    <option value="">Fr</option>
+                    <option value="">En</option>
                 </select>
 
                 <button>Nous contacter</button>

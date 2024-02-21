@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./Magazine.css"
 import { useSelector } from 'react-redux'
 import { baseUrlImage } from '../../bases/basesUrl';
@@ -7,35 +7,26 @@ import ReadDoc from './ReadDoc';
 const Magazine = ({ categorieId, valueSearch }) => {
 
     const magazines = useSelector(state => state.magazines.value);
-    const [magazinesFilter, setMagazineFilter] = useState([]);
 
     const [showModalReadDoc, setShowModalReadDoc] = useState(false);
     const [magazine, setMagazine] = useState();
 
-    useEffect(() => {
-        const filterMagazines = magazines && magazines.length > 0 && magazines
-            .filter(val => {
-                const nom = val && val.nom && val.nom.toLowerCase();
-                const value = valueSearch && valueSearch.toLowerCase();
-                if (valueSearch)
-                    return nom.includes(value);
-                else
-                    return val
-            });
-        setMagazineFilter(filterMagazines);
-    }, [valueSearch, magazines]);
 
-    useEffect(() => {
-        const filterMagazines = magazines && magazines.length > 0 && magazines
-            .filter(val => {
+    const magazinesFilter = magazines && magazines.length > 0 && magazines
+        .filter(val => {
+            const nom = val && val.nom && val.nom.toLowerCase();
+            const value = valueSearch && valueSearch.toLowerCase();
+
+            if (categorieId) {
                 const categorieMagazineId = val && val.categorieMagazineId;
                 if (categorieId)
                     return categorieMagazineId === categorieId;
-                else
-                    return val
-            });
-        setMagazineFilter(filterMagazines);
-    }, [categorieId, magazines]);
+            } else if (valueSearch) {
+                return nom.includes(value);
+            } else {
+                return val
+            }
+        });
 
     function handleMagazine(val) {
         setShowModalReadDoc(true);
@@ -52,13 +43,24 @@ const Magazine = ({ categorieId, valueSearch }) => {
                 {
                     magazinesFilter ? magazinesFilter.length > 0 && magazinesFilter
                         .map(value => {
-                            return <div className='card' key={value.id} onClick={() => handleMagazine(value)}>
+                            const categorie = value && value.categorie;
+                            return <div className='card' key={value.id}
+                                onClick={() => handleMagazine(value)}>
                                 <img src={baseUrlImage + "/" + value.image} alt="" />
-                                <div className='contentNom'>
-                                    {
-                                        value && value.nom && value.nom.length > 20 ? value && value.nom && value.nom.substring(0, 20) + "..." :
-                                            value && value.nom
-                                    }
+                                <div className='descMagazine'>
+                                    <div className='contentNom'>
+                                        {
+                                            value && value.nom && value.nom.length > 20 ? value && value.nom && value.nom.substring(0, 20) + "..." :
+                                                value && value.nom
+                                        }
+                                    </div>
+                                    <span className='categorieNom'>
+                                        {
+                                            categorie && categorie.nom && categorie.nom.length > 20 ?
+                                                categorie && categorie.nom && categorie.nom.substring(0, 20) + "..." :
+                                                categorie && categorie.nom
+                                        }
+                                    </span>
                                 </div>
                             </div>
                         }) : "Chargement..."

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@mikecousins/react-pdf": "^5.5.1",
+    "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf/renderer": "^1.6.8",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",

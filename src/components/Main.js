@@ -11,10 +11,17 @@ const Main = () => {
 
     return (
         <>
-            <Search setValueSearch={setValueSearch} />
-            <Categorie setCategorieId={setCategorieId} />
+            <Search
+                setValueSearch={setValueSearch}
+                setCategorieId={setCategorieId}
+                valueSearch={valueSearch}
+            />
+            <Categorie
+                setCategorieId={setCategorieId}
+                categorieId={categorieId}
+            />
             <Magazine categorieId={categorieId} valueSearch={valueSearch} />
-            <Footer/>
+            <Footer />
         </>
     )
 }

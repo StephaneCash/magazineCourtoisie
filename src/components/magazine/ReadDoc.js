@@ -38,6 +38,7 @@ const ReadDoc = (props) => {
                     <h5>{magazine && magazine.nom}</h5>
                     <span>{nbrPages && nbrPages}</span>
                     <div className='cardShowDoc card'>
+
                         <FullScreen handle={screen}>
                             <Pdf file={baseUrlImage + "/" + file} page={page}>
                                 {({ pdfDocument, pdfPage, canvas }) => (
