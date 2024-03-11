@@ -1,0 +1,80 @@
+.videos {
+  padding: 2rem 5rem;
+  background-color: #efefef;
+}
+
+.videos .grille {
+  display: grid;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.videos .grille .card {
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  height: 300px;
+}
+
+.videos .grille .card iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.videos .contentBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.videos button {
+  border: 1px solid silver;
+  height: 35px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.videos button svg {
+  color: #333;
+}
+
+@media screen and (max-width: 3000px) {
+  .videos .grille {
+    grid-template-columns: repeat(5, 19%);
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  .videos .grille {
+    grid-template-columns: repeat(4, 24%);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .videos .grille {
+    grid-template-columns: repeat(3, 32%);
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .videos .grille {
+    grid-template-columns: repeat(2, 48.75%);
+  }
+
+  .videos {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .videos .grille .card {
+    height: 200px;
+  }
+}

@@ -65,7 +65,6 @@ const Footer = () => {
                     <FiTwitter/>
                     <FiInstagram/>
                     <FiYoutube/>
-                    <FiLinkedin/>
                 </div>
             </div>
         </div>

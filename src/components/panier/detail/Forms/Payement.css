@@ -1,0 +1,23 @@
+.payement {
+  padding: 2rem 5rem;
+}
+
+.payement button {
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  background-color: #084298;
+  color: #efefef;
+  border: 1px solid #084298;
+}
+
+.payement .btnsStepS {
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+
+.payement .btnsStepS button:first-child {
+  background-color: #efefef;
+  color: #333;
+  border: 1px solid silver;
+}

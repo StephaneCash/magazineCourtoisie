@@ -1,125 +1,155 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid silver;
-    height: 70px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 5rem;
+  border-bottom: 1px solid #eee;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
 }
 
 .header .col1 {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
 }
 
 .header .col1 img {
-    width: 200px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
+  width: 200px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .header .col1 ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
-.header .liSpecifique {
-    display: none;
+nav form {
+  flex: 1;
 }
 
-.header .col2 {
+nav form div {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+nav form div input {
+  width: 100%;
+  border: 1px solid silver;
+  padding: 0.4rem 1rem;
+  outline: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 35px;
+  font-family: "Alegreya", sans-serif;
+}
+
+nav form div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #084298;
+  background-color: #084298;
+  padding: 0.4rem 1rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 35px;
+}
+
+nav .icons {
+  display: flex;
+  gap: 1rem;
+}
+
+nav .icons .button {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+}
+
+nav .icons .button span {
+  font-size: 14px;
+}
+
+nav .icons .button svg {
+  font-size: 1.3rem;
+}
+
+nav .hidenIcon,
+nav .iconsSec {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  nav form div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  nav {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  nav .hidenIcon {
+    display: block;
+  }
+
+  nav .hidenIcon button,
+  .iconsSec button {
+    background-color: transparent;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-}
+    border: 0;
+  }
 
-.header .col2 button {
-    border: 1px solid #084298;
-    padding: .5rem;
-    color: #084298;
-    background-color: #fff;
-    border-radius: 5px;
-}
+  nav .hidenIcon button svg {
+    color: #222 !important;
+    font-size: 1.4rem;
+  }
 
-.header #icons {
-    cursor: pointer;
+  nav form {
     display: none;
+  }
+
+  nav form.active {
+    display: block;
+  }
+
+  nav .icons.inactive {
+    display: none;
+  }
+
+  nav .iconsSec.active {
+    display: block;
+  }
+
+  nav .icons button span {
+    display: none;
+  }
 }
 
-@media screen and (max-width:900px) {
-    .header #icons {
-        display: block;
-    }
-
-    .header.active #icons::before {
-        content: '\2715';
-        font-size: 1.5rem;
-    }
-
-    .header #icons::before {
-        content: "\2630";
-        font-size: 1.5rem;
-    }
-
-    .header .col1 ul {
-        position: fixed;
-        left: -100%;
-        top: 9%;
-        flex-direction: column;
-        background-color: #084298;
-        width: 100%;
-        text-align: center;
-        transition: .25s;
-        padding: 1rem;
-        height: 90vh;
-        z-index: 1000000000;
-        justify-content: center;
-    }
-
-    .header.active .col1 ul li {
-        padding: 3px 0;
-        color: #fff;
-        font-size: 1.2rem;
-    }
-
-    .header.active .liSpecifique {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        justify-content: center;
-    }
-
-    .header.active .liSpecifique button {
-        border: 1px solid #084298;
-        padding: .5rem;
-        color: #084298;
-        background-color: #fff;
-        border-radius: 5px;
-    }
-
-    .header .col1 ul li:hover {
-        background-color: #578ad6;
-    }
-
-    .header.active ul {
-        left: 0;
-    }
-}
-
-@media screen and (max-width:470px) {
-    .header .col2 {
-        display: none;
-    }
+@media screen and (max-width:455px) {
+  .header .col1 img {
+    width: 120px;
+  }
 }

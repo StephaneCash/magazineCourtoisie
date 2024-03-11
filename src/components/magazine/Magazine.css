@@ -1,105 +1,59 @@
 .magazine {
-    padding: 2rem 2rem;
-    width: 70%;
-    margin: auto;
+  padding: 0 5rem 2rem 5rem;
+  width: 100%;
+  margin: auto;
+  background-color: #fff !important;
 }
 
-.magazine .grille {
-    display: grid;
-    grid-template-columns: repeat(4, 24%);
-    justify-content: space-between;
+.magazine h2 {
+  margin: 0;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.magazine .grille .card {
-    height: 380px;
-    border: 0;
-    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    cursor: pointer;
-    transition: .6s;
+.magazine .card {
+  border: 1px solid silver;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  cursor: pointer;
+  transition: 0.6s;
+  border-radius: 0;
+  margin-right: 1rem;
 }
 
-.magazine .grille .card img {
-    height: 80%;
-    width: 100%;
-    object-fit: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    transition: all 0.3s;
+.magazine .card img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
 }
 
 .magazine .contentNom {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
 .magazine .grille .card img:hover {
-    transform: scale(1.019);
+  transform: scale(1.019);
 }
 
 .descMagazine {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 10px;
+  padding: 1rem;
 }
 
 .descMagazine .categorieNom {
-    color: #084298;
-    font-weight: 10px !important;
+  color: #084298;
+  font-size: 12px;
 }
 
-@media screen and (max-width:1335px) {
-    .magazine {
-        width: 80%;
-    }
-}
+@media screen and (max-width:840px) {
+  .magazine {
+    padding: 2rem 1rem;
+  }
 
-@media screen and (max-width:1175px) {
-    .magazine {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width:1015px) {
-    .magazine .grille {
-        display: grid;
-        grid-template-columns: repeat(3, 32.33333%);
-        justify-content: space-between;
-    }
-}
-
-@media screen and (max-width:800px) {
-    .magazine .grille {
-        display: grid;
-        grid-template-columns: repeat(2, 48.5%);
-        justify-content: space-between;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .magazine {
-        width: 100%;
-        padding: 2rem .4rem;
-    }
-
-    .magazine .grille .card {
-        height: 280px;
-        border: 0;
-        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-        cursor: pointer;
-        transition: .6s;
-    }
-
-    .magazine .grille .card img {
-        height: 70%;
-        width: 100%;
-        object-fit: cover;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-    }
+  .magazine .card img {
+    height: 140px;
+  }
 }

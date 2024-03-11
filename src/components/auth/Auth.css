@@ -1,0 +1,70 @@
+.auth {
+  width: 500px;
+  margin: auto;
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  border-radius: 10px;
+}
+
+.auth h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.auth .contentInput {
+  display: flex;
+  align-items: center;
+  border: 1px solid silver;
+  padding: 0.4rem 1rem;
+  gap: 1rem;
+  border-radius: 5px;
+}
+
+.auth form input {
+  width: 100%;
+  border: 0;
+  outline: none;
+}
+
+.auth form button {
+  padding: 0.5rem;
+  border: 1px solid #084298;
+  background-color: #084298;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.auth .contentPassForget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.auth .contentPassForget div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth .contentPassForget button {
+  border: 0;
+  background-color: transparent;
+  color: #084298;
+}
+
+.auth a {
+  color: #084298;
+}

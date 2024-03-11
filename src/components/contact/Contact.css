@@ -1,0 +1,85 @@
+.contacts {
+  background-color: #efefef;
+  padding: 2rem 5rem;
+}
+
+.contacts .mainContact {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contacts .mainContact .column1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contacts .mainContact .column1 svg {
+  font-size: 1.3rem;
+}
+.contacts .mainContact .column1 .adress {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contacts .column2 {
+  flex: 1;
+}
+
+.contacts .column2 form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contacts .column2 form input,
+.contacts .column2 form textarea {
+  border: 1px solid silver;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  outline: none;
+  font-family: "Alegreya", sans-serif;
+}
+
+.contacts .column2 button {
+  width: 200px;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  background-color: #084298;
+  color: #efefef;
+  border: 1px solid #084298;
+}
+
+@media screen and (max-width: 840px) {
+  .contacts {
+    padding: 2rem 1rem;
+  }
+  .contacts .mainContact .column1 {
+    width: 100%;
+  }
+
+  .contacts .mainContact {
+    flex-direction: column;
+  }
+  .contacts .column2 {
+    width: 100%;
+  }
+
+  .contacts .mainContact .column1 .adress {
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contacts .mainContact .column1 .adress div {
+    font-family: "Alegreya", sans-serif !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contacts .mainContact .column1 .adress svg {
+    display: none;
+  }
+}

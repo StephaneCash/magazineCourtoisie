@@ -1,0 +1,79 @@
+.mainMagaById {
+  padding: 2rem 5rem;
+}
+
+.page.page-cover {
+  border-width: 1px;
+  border-image: initial;
+  margin-bottom: 2rem;
+}
+
+.headMagazine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainMagaById .toolsBar button {
+  background-color: transparent;
+}
+
+.docBook {
+  margin-top: 1rem;
+}
+
+.docBook .demoPage.--left {
+  background-color: #fff !important;
+  padding: 1rem;
+  text-align: center;
+  overflow: auto;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.docBook .demoPage.--right {
+  background-color: #fff !important;
+  padding: 1rem;
+  text-align: center;
+  height: 500px;
+  overflow: auto;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.head2 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.head2 .toolsBar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.head2 .toolsBar button {
+  background-color: transparent;
+  border: 0;
+}
+
+.head2 .toolsBar button svg {
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .mainMagaById {
+    padding: 2rem 1rem;
+  }
+
+  .page.page-cover {
+    border-color: transparent;
+    background-color: transparent;
+    border-image: initial;
+    border: 0;
+    margin-bottom: 2rem;
+  }
+}

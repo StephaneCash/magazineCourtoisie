@@ -1,0 +1,32 @@
+.panier button {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0;
+}
+.panier button span {
+  font-size: 14px;
+}
+
+.panier button .contentPanier {
+  position: relative;
+}
+
+.panier button svg {
+  font-size: 1.3rem;
+}
+
+.panier button .contentPanier div {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #084298;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

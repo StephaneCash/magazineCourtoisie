@@ -1,110 +1,69 @@
 .Search {
-    padding: 3rem;
-    width: 100%;
-    background-color: #084298;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 2rem 5rem;
 }
 
-.Search .content {
-    width: 60%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+.Search .card {
+  border: 1px solid silver;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  cursor: pointer;
+  transition: 0.6s;
+  border-radius: 0;
+  margin-bottom: 1rem;
 }
 
-.Search .content h5 {
-    font-size: 3rem;
-    color: #fff;
+.Search .card img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
 }
 
-.Search .content p {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #fff;
+.Search .contentNom {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }
 
-.Search .content .inputSearch {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 3px;
+.Search .grille .card img:hover {
+  transform: scale(1.019);
 }
 
-.Search .content .inputSearch .svg {
-    background-color: #fff;
-    padding: 0.375rem 0.75rem;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 5px;
-    display: block;
-    padding: 0.375rem 0.75rem;
-    height: 36.5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.descMagazine {
+  padding: 1rem;
 }
 
-.Search .content .inputSearch input {
-    height: 37px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    box-shadow: none;
-    border: none;
+.descMagazine .categorieNom {
+  color: #084298;
+  font-size: 12px;
 }
 
-@media screen and (max-width:1024px) {
-    .Search {
-        padding: 5rem;
-    }
-
-    .Search .content {
-        width: 70%;
-    }
+.Search .grille {
+  display: grid;
+  grid-template-columns: repeat(5, 19%);
+  justify-content: space-between;
+  margin-top: 2rem;
 }
 
-@media screen and (max-width:900px) {
-    .Search {
-        padding: 5rem;
-    }
-
-    .Search .content {
-        width: 80%;
-    }
+@media screen and (max-width: 1250px) {
+  .Search .grille {
+    grid-template-columns: repeat(4, 24%);
+  }
 }
 
-@media screen and (max-width:800px) {
-    .Search {
-        padding: 5rem 2rem 5rem 2rem;
-    }
+@media screen and (max-width: 1000px) {
+  .Search .card img {
+    height: 150px;
+  }
 
-    .Search .content {
-        width: 90%;
-    }
+  .Search {
+    padding: 2rem 1rem;
+  }
 }
 
-@media screen and (max-width:640px) {
-    .Search {
-        padding: 4rem 1rem 4rem 1rem;
-    }
-
-    .Search .content {
-        width: 100%;
-    }
-
-    .Search .content h5 {
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width:370px) {
-    .Search .content h5 {
-        font-size: 1.6rem;
-    }
+@media screen and (max-width: 800px) {
+  .Search .grille {
+    grid-template-columns: repeat(2, 48.75%);
+  }
 }

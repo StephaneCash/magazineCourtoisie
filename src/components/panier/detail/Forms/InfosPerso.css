@@ -1,0 +1,80 @@
+.infosPerso {
+  padding: 2rem 5rem;
+}
+
+.infosPerso .modeLivraison {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infosPerso .modeLivraison div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.infosPerso .modeLivraison div svg {
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.infosPerso .modeLivraison div label {
+  cursor: pointer;
+}
+
+.infosPerso .modeLivraison .active {
+  color: #084298;
+  font-weight: 600;
+}
+
+.infosPerso .modeLivraison .active svg {
+  color: #084298;
+}
+
+.infosPerso form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.infosPerso form input,
+.infosPerso form textarea {
+  border: 1px solid silver;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  outline: none;
+  font-family: "Alegreya", sans-serif;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.infosPerso button {
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  background-color: #084298;
+  color: #efefef;
+  border: 1px solid #084298;
+}
+
+.btnsStepS {
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+
+.btnsStepS button:first-child {
+  background-color: #efefef;
+  color: #333;
+  border: 1px solid silver;
+}
+
+@media screen and (max-width: 600px) {
+  .infosPerso .col-sm-6 {
+    width: 100% !important;
+  }
+  .infosPerso {
+    padding: 2rem 1rem;
+  }
+}

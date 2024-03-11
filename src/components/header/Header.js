@@ -1,63 +1,101 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Header.css"
 import logo from "../../assets/logo.png"
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { FiSearch, FiX } from 'react-icons/fi';
+import { BsPersonCircle } from 'react-icons/bs';
+import Panier from '../panier/Panier';
+import { toast } from 'react-toastify';
 
 const Header = () => {
 
-    function displayMenu() {
-        let nav = document.querySelector('nav');
-        nav.classList.toggle('active');
-    };
-
-    useEffect(() => {
-        let nav = document.querySelector('nav');
-        let links = document.querySelectorAll('nav li');
-        links.forEach((link) => {
-            link.addEventListener('click', () => {
-                nav.classList.remove("active")
-            })
-        })
-    }, []);
-
     const navigate = useNavigate();
+
+    const [valueSearch, setValueSearch] = useState('');
 
     function handleToHome() {
         navigate("/");
     };
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if (valueSearch)
+            navigate(`/search/${valueSearch}`);
+        else
+            toast.error("Veuillez renseigner une donnée à rechercher...")
+    };
+
+    const handleRedirectToConnexion = () => {
+        navigate('/connexion');
+    };
+
+    const [showForm, setShowForm] = useState(false);
+
+    const [windowSize, setWindowSize] = useState(
+        window.innerWidth
+    );
+
+    useEffect(() => {
+        function handleRezise() {
+            setWindowSize(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleRezise);
+
+        return () => window.removeEventListener('resize', handleRezise)
+
+    }, [windowSize]);
+
+    console.log(showForm)
+
     return (
         <nav className='header'>
-            <div className='col1'>
-                <img src={logo} alt="" onClick={handleToHome} style={{cursor:"pointer"}} />
-                <ul>
-                    <li>
-                        <Link to="/pourquoi-magazine-courtoisie" style={{ color: "#333", textDecoration: "none" }}>Pourquoi Magazine Courtoisie ?</Link>
-                    </li>
-                    <li>Créer</li>
-                    <li>Ressources</li>
-                    <li>Exemples</li>
+            {
+                !showForm && windowSize <= 740 ?
+                    <div className='col1'>
+                        <img src={logo} alt="" onClick={handleToHome} style={{ cursor: "pointer" }} />
+                    </div> :
+                    windowSize > 740 &&
+                    <div className='col1'>
+                        <img src={logo} alt="" onClick={handleToHome} style={{ cursor: "pointer" }} />
+                    </div>
+            }
 
-                    <li className='liSpecifique'>
-                        <select>
-                            <option value="">Fr</option>
-                            <option value="">En</option>
-                        </select>
+            <form className={showForm ? "form active" : "form"} onSubmit={(e) => handleSearch(e)}>
+                <div>
+                    <input
+                        type="search"
+                        placeholder='Rechercher dans magazine courtoisie...'
+                        onChange={(e) => setValueSearch(e.target.value)}
+                    />
+                    <button>
+                        <FiSearch color='#fff' />
+                    </button>
+                </div>
+            </form>
 
-                        <button>Nous contacter</button>
-                    </li>
-                </ul>
+            <div className={showForm ? "icons inactive" : "icons"}>
+                <div className='hidenIcon'>
+                    <button onClick={() => setShowForm(true)}>
+                        <FiSearch color='#fff' />
+                        <span>Rechercher</span>
+                    </button>
+                </div>
+                <button className='button' onClick={handleRedirectToConnexion}>
+                    <BsPersonCircle color='#222' />
+                    <span>Connectez-vous</span>
+                </button>
+                <Panier />
             </div>
-            <div className='col2'>
-                <select>
-                    <option value="">Fr</option>
-                    <option value="">En</option>
-                </select>
 
-                <button>Nous contacter</button>
-            </div>
-
-            <div id='icons' onClick={() => displayMenu()}></div>
+            {
+                showForm &&
+                <div className={showForm ? "iconsSec active" : "iconsSec"}>
+                    <button onClick={() => setShowForm(!showForm)}>
+                        <FiX size={30} color='#333' />
+                    </button>
+                </div>
+            }
         </nav>
     )
 }

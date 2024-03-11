@@ -1,3 +1,58 @@
 .pourquoi {
-    padding: 5rem;
+  padding: 2rem 5rem;
+  background-color: #fff;
+}
+
+.pourquoi h2 {
+  text-align: center;
+}
+
+.pourquoi .text {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pourquoi .contentText {
+  width: 50%;
+}
+
+.pourquoi .contentText,
+.pourquoi .contentText ul li {
+  font-family: "Alegreya", sans-serif !important;
+}
+
+.pourquoi .contentText h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.pourquoi .text img {
+  height: 400px;
+  flex: 1;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) {
+  .pourquoi .text {
+    align-items: normal;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .pourquoi {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .pourquoi .text {
+    flex-direction: column;
+  }
+
+  .pourquoi .contentText{
+    width: 100%;
+  }
 }
