@@ -21,3 +21,21 @@
   color: #333;
   border: 1px solid silver;
 }
+
+.payement .mainPayement select {
+  margin-bottom: 1rem;
+  display: block;
+  padding: 0.4rem;
+  border: 1px solid silver;
+  outline: none;
+  border-radius: 3px;
+}
+
+.payement .cardMain {
+  display: flex;
+  justify-content: center;
+}
+
+.payement .cardMain img {
+  height: 200px;
+}

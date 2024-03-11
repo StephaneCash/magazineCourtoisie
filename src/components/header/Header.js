@@ -46,8 +46,6 @@ const Header = () => {
 
     }, [windowSize]);
 
-    console.log(showForm)
-
     return (
         <nav className='header'>
             {

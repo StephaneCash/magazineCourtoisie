@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 import "./InfosPerso.css"
 import { ContextApp } from '../../../../AppContext';
@@ -48,6 +48,16 @@ const InfosPerso = () => {
         setStepsCheck(filterSteps);
     };
 
+    useEffect(() => {
+        if (modeLivraison === 2) {
+            const rdtOpen = document.querySelector('.rdt input');
+            if (rdtOpen) {
+                rdtOpen.placeholder = "Veuillez renseigner l'heure et la date de livraison...";
+                rdtOpen.style.boxShadow = "none";
+            }
+        }
+    }, [modeLivraison]);
+
     return (
         <div className='infosPerso'>
             <form>
@@ -65,7 +75,7 @@ const InfosPerso = () => {
                             modeLivraison === 2 ? <FiCheckCircle /> :
                                 <FiCircle />
                         }
-                        <label>Télécharger le magazine en format PDF et faites-vous livre le format physique</label>
+                        <label>Télécharger en format PDF et faites-vous livrer également le format physique</label>
                     </div>
                 </div>
                 <div className='row'>
@@ -114,12 +124,9 @@ const InfosPerso = () => {
 
                         {
                             modeLivraison === 2 &&
-                            <>
-                                <label>Renseigner votre date de livraison et l'heure</label>
-                                <Datetime
-                                    onChange={(date) => setDateLivraison(date)}
-                                />
-                            </>
+                            <Datetime
+                                onChange={(date) => setDateLivraison(date)}
+                            />
                         }
 
                         <textarea
@@ -128,7 +135,6 @@ const InfosPerso = () => {
                             value={desc}
                             onChange={(e) => setDesc(e.target.value)}
                             rows={modeLivraison === 2 ? 1 : 3} placeholder='Un commentaire...'></textarea>
-
 
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "./MagazineById.css"
 import Header from '../../header/Header'
 import Footer from '../../footer/Footer'
@@ -25,8 +25,6 @@ const MagazineById = () => {
 
     const location = useLocation();
     const magazine = location && location.state && location.state.val;
-
-    const [tab, setTab] = useState(1);
 
     const dispatch = useDispatch();
 

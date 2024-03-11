@@ -14,7 +14,6 @@ import Footer from './footer/Footer'
 const Main = () => {
 
     const [categorieId, setCategorieId] = useState('');
-    const [valueSearch, setValueSearch] = useState('');
 
     const [sizeMag, setSizeMag] = useState(null);
 
@@ -35,7 +34,7 @@ const Main = () => {
                     sizeMag={sizeMag}
                 />
                 <Magazine
-                    categorieId={categorieId} valueSearch={valueSearch}
+                    categorieId={categorieId}
                     setSizeMag={setSizeMag}
                 />
                 <Videos />

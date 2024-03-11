@@ -5,21 +5,15 @@ import { baseUrlImage } from '../../bases/basesUrl';
 import Carousel from "react-multi-carousel";
 import { Link } from 'react-router-dom';
 
-const Magazine = ({ categorieId, valueSearch, setSizeMag, }) => {
+const Magazine = ({ categorieId, setSizeMag, }) => {
 
     const magazines = useSelector(state => state.magazines.value);
 
     const magazinesFilter = magazines && magazines.length > 0 && magazines
         .filter(val => {
-            const nom = val && val.nom && val.nom.toLowerCase();
-            const value = valueSearch && valueSearch.toLowerCase();
-
             if (categorieId) {
                 const categorieMagazineId = val && val.categorieMagazineId;
-                if (categorieId)
-                    return categorieMagazineId === categorieId;
-            } else if (valueSearch) {
-                return nom.includes(value);
+                return categorieMagazineId === categorieId;
             } else {
                 return val
             }

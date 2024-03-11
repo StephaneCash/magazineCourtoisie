@@ -64,6 +64,10 @@
   gap: 1rem;
 }
 
+.infosPerso .rdt {
+  margin-top: -0.5rem;
+}
+
 .btnsStepS button:first-child {
   background-color: #efefef;
   color: #333;

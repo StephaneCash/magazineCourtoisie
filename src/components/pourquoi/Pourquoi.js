@@ -5,41 +5,36 @@ import apropos from "../../assets/saint.png"
 const Pourquoi = () => {
   return (
     <div className='pourquoi' data-aos="zoom-in-left">
-      <h2>A props du magazine COURTOISIE</h2>
+      <h2>A propos de Courtoisie magazine</h2>
 
       <div className='text'>
         <div className='contentText'>
           <h3>Qui sommes-nous ?</h3>
 
-          Magazine courtoisie est une plateforme dédiée aux amateurs de magazines,
-          offrant un large éventail d'ouvrages couvrant divers sujets et genres. Notre mission est de :
+          Magazine courtoisie est une plateforme dédiée aux amateurs de magazines, offrant un large
+          éventail de rubriques couvrant divers sujets et genres.
+
+          <h5 className='mt-1'>Notre mission est de :</h5>
 
           <ul>
-            <li> Promouvoir la lecture de magazines : Nous croyons que les magazines constituent une source
-              d'information et de divertissement précieuse, et nous nous engageons à les rendre accessibles à tous.</li>
-
             <li>
-              Offrir une large sélection de magazines : Notre plateforme propose des magazines pour tous les goûts, des actualités
-              et de la mode aux loisirs et à la cuisine.
+              Promouvoir la lecture de Courtoisie Mag : Nous croyons que notre magazine constitue une source d'information et de divertissement précieuse, et nous
+              nous engageons à le rendre accessible à tous.
             </li>
 
             <li>
-              Soutenir l'industrie du magazine : Nous collaborons avec des éditeurs du monde entier pour offrir une
-              plateforme de distribution numérique et promouvoir leurs publications.
+              Offrir aux lecteurs une multiplicité de rubriques : Notre plateforme propose plusieurs
+              rubriques notamment : La mode, décoration, us et coutumes, personnalité, fiscalité congolaise,
+              prévention routière, cuisine de chez nous, environnement, événements etc…
             </li>
           </ul>
 
-          <h6>Ce que nous offrons :</h6>
+          <h5 className='mt-1'> Ce que nous offrons :</h5>
 
           <ul>
             <li>
-              Un vaste choix de magazines : Notre catalogue comprend des centaines de magazines en provenance du monde entier,
-              disponibles en format numérique et/ou papier.
-            </li>
-
-            <li>
-              Un service d'abonnement flexible : Vous pouvez choisir de vous abonner à vos
-              magazines préférés ou acheter des numéros individuels.
+              Un service d'abonnement flexible : Vous pouvez choisir de vous abonner à notre plateforme
+              pour ne rater aucune publication ou acheter notre magazine en format numérique ou physique.
             </li>
 
             <li>
@@ -48,18 +43,13 @@ const Pourquoi = () => {
             </li>
           </ul>
 
+          <h5 className='mt-1'>Pourquoi choisir Courtoisie magazine  ?</h5>
 
-          <h6> Pourquoi choisir  Magazine courtoisie  ?</h6>
-
-          Votre guichet unique pour les magazines : Trouvez tous vos magazines préférés en un seul endroit.
-          Des prix abordables : Nous proposons des prix compétitifs sur tous nos magazines.
-          Un service client exceptionnel : Notre équipe est toujours disponible pour vous aider.
-          Rejoignez notre communauté de passionnés de magazines !
-
-          Créez un compte gratuit pour explorer notre catalogue et découvrir de nouveaux magazines.
-          Abonnez-vous à vos magazines préférés et ne manquez jamais un numéro.
-          Suivez-nous sur les réseaux sociaux pour rester au courant des dernières actualités et offres.
-          Magazine courtoisie est votre source incontournable pour les magazines. Explorez notre univers de lecture dès aujourd'hui !
+          Le Magazine Courtoisie est un concept original en ce qu'il traite d'une valeur civique universelle,
+          qui paradoxalement n'est pas mise en lumière alors qu'elle baigne tous les domaines de la vie.
+          La courtoisie c'est comme une fleur d'une bonne senteur dont la présence dans une pièce rend
+          agréable le séjour. Elle est aussi comme une eau qui apaise, rafraîchit et apaise les cours. Magazine de bonnes mœurs et manières, COURTOISIE a
+          aussi une vocation généraliste, car c'est une valeur cardinale indispensable dans tous les domaines et instants de la vie.
         </div>
 
         <img src={apropos} alt="" />
